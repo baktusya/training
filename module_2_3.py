@@ -3,10 +3,14 @@ number = my_list[0]
 index = 1
 while index <= len(my_list):
     if number >= 0:
-        print(number)
-        number = my_list[index]
-        index += 1
-        continue
+        if number != 0:
+            print(number)
+            number = my_list[index]
+            index += 1
+        else:
+            number = my_list[index]
+            index += 1
+            continue
     else:
         break
 
