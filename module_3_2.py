@@ -1,6 +1,5 @@
 def send_email(massage, recipient,*, sender = "university.help@gmail.com"):
-    domen = ['.com', '.ru','.net']
-    if any(word in recipient for word in domen) and '@' in recipient and any(word in sender for word in domen) and '@' in sender:
+    if recipient.endswith(('.com', '.ru','.net')) and '@' in recipient and sender.endswith(('.com', '.ru','.net')) and '@' in sender:
         if sender == recipient:
             print('Нельзя отправить письмо самому себе!')
             return
