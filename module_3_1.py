@@ -1,14 +1,13 @@
 calls = 0
 def count_calls ():
-    calls += 1    # количество вызовов этих двух функций
-def string_info(string):
     global calls
-    calls += 1
+    calls += 1    
+def string_info(string):
+    count_calls ()
     string = tuple([len(string), string.upper(), string.lower()])
     return string
 def is_contains(string, list_to_search):
-    global calls
-    calls += 1
+    count_calls ()
     list_to_search = [word.lower() for word in list_to_search]
     string = string.lower()
     return string in list_to_search
