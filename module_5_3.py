@@ -16,53 +16,55 @@ class House:
     def __str__(self):
         return f'Название: {self.name}, кол-во этажей: {self.number_of_floors}'
 
-    def __eq__(self, other): # почему-то выдаёт сообщение про номер этажа и None в консоль
-        if isinstance(other, int):
-            if self.number_of_floors == other:
+    def __eq__(self, other): 
+        if isinstance(other, House):
+            if self.number_of_floors == other.number_of_floors:
                 return True
             return False
         print('Номер этажа не является целым числом')
 
 
     def __lt__(self, other):
-        if isinstance(other, int):
-            if self.number_of_floors < other:
+        if isinstance(other, House):
+            if self.number_of_floors < other.number_of_floors:
                 return True
             return False
         print('Номер этажа не является целым числом')
 
     def __le__(self, other):
-        if isinstance(other, int):
-            if self.number_of_floors <= other:
+        if isinstance(other, House):
+            if self.number_of_floors <= other.number_of_floors:
                 return True
             return False
         print('Номер этажа не является целым числом')
 
     def __gt__(self, other):
-        if isinstance(other, int):
-            if self.number_of_floors > other:
+        if isinstance(other, House):
+            if self.number_of_floors > other.number_of_floors:
                 return True
             return False
         print('Номер этажа не является целым числом')
 
     def __ge__(self, other):
-        if isinstance(other, int):
-            if self.number_of_floors >= other:
+        if isinstance(other, House):
+            if self.number_of_floors >= other.number_of_floors:
                 return True
             return False
         print('Номер этажа не является целым числом')
 
     def __ne__(self, other):
-        if isinstance(other, int):
-            if self.number_of_floors != other:
+        if isinstance(other, House):
+            if self.number_of_floors != other.number_of_floors:
                 return True
             return False
         print('Номер этажа не является целым числом')
 
     def __add__(self, value):
-        return self.number_of_floors + value
-
-
+        if isinstance (value, int): 
+          self.number_of_floors += value
+          return self 
+        print ('Введённое значение не является числом')
+        
     def __radd__(self, value):
         return self.__add__(value)
 
@@ -77,12 +79,12 @@ print(h1)
 print(h2)
 print(h1 == h2)  # __eq__
 h1 = h1 + 10  # __add__
-print(h1) # выдаёт просто число из переменной выше, а не вызывает функцию __str__ с новым значением переменной (Должно быть: Название: ЖК Солнечный, кол-во этажей: 22)
+print(h1)
 print(h1 == h2)
 h1 += 10  # __iadd__
-print(h1) # выдаёт просто число из переменной выше, а не вызывает функцию __str__ с новым значением переменной (Должно быть: Название: ЖК Солнечный, кол-во этажей: 32)
+print(h1)
 h2 = 10 + h2  # __radd__
-print(h2) # выдаёт просто число из переменной выше, а не вызывает функцию __str__ с новым значением переменной (Должно быть: Название: ЖК Солнечный, кол-во этажей: 17)
+print(h2)
 print(h1 > h2)  # __gt__
 print(h1 >= h2)  # __ge__
 print(h1 < h2)  # __lt__
