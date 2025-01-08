@@ -1,11 +1,13 @@
 import random
 
+'''lambda-функция'''
 first = 'Мама мыла раму'
 second = 'Рамена мало было'
 
 coincidence = list(map(lambda x, y,: x ==y, first, second))
 print(coincidence)
 
+'''замыкание'''
 def get_advanced_writer(file_name):
     def write_everything(*data_set):
         with open(file_name, 'a', encoding='utf-8') as file:
@@ -17,6 +19,7 @@ def get_advanced_writer(file_name):
 write = get_advanced_writer('example.txt')
 write('Это строчка', ['А', 'это', 'уже', 'число', 5, 'в', 'списке'])
 
+'''метод __call__'''
 class MysticBall:
 
     def __init__(self, *words):
