@@ -23,10 +23,11 @@ def sorted_func(lst):
   return sorted(lst)
 
 
-#int_list = [1, 6, 8, 3, 5, 7, 3.5, 9, 2.1]
+my_list = [1, 6, 8, 3, 5, 7, 3.5, 9, 2.1]
 
 print(apply_all_func([6, 20, 15, 9], max, min))
 print(apply_all_func([6, 20, 15, 9], len, sum, sorted))
+print(apply_all_func(my_list, len, max, sorted))
 
 
 
