@@ -46,6 +46,6 @@ print(time_spent, '(линейный)')
 #         p.map(read_info, filenames)
 #         p.close()
 #         p.join()
-# end_time = time()
-# time_spent = end_time - start_time
-# print(time_spent, '(многопроцессорный)')
+#     end_time = time()
+#     time_spent = end_time - start_time
+#     print(time_spent, '(многопроцессорный)')
