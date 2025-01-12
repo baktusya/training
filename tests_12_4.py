@@ -51,5 +51,3 @@ Runner.__repr__ = custom_repr
 
 if __name__ == "__main__":
     unittest.main()
-
-
