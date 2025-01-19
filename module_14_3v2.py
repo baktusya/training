@@ -139,7 +139,7 @@ async def buying_vitaC(call):
 	await call.message.answer('Вы выбрали Витамин С. Хотите купить?', reply_markup = buykey)
 	await call.answer()
 	
-@dp.callback_query_handler(text='vitaC')
+@dp.callback_query_handler(text='vitaD')
 async def buying_vitaD(call):
 	await call.message.answer('Вы выбрали Витамин D. Хотите купить?', reply_markup = buykey)
 	await call.answer()	
